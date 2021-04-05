@@ -1,0 +1,427 @@
+openapi: 3.0.0
+
+info:
+  title: "cmdty North America Grain Price API"
+  description: "Access best-in-class intraday and historical cash grain prices for North America using Barchart's REST-ful web service"
+  version: 1.0.0
+
+servers:
+  - description: "Production"
+    url: "http://ondemand.websol.barchart.com/"
+
+
+
+paths:
+
+  /getCropFeatures:
+    get:
+      tags:
+        - CropFeatures
+      summary: Resturns feature geotiff image of requested region.
+      description: >
+                     The getCropFeatures API provides feature geospatial image of requested region.
+                     Crop features can be requested for state names, for district codes, for county_fips, and for self-define polygons.
+                     Crop features can be filtered by start date and end date, maximum, minimum or mean value of features.
+      parameters:
+        - in: query
+          name: apikey
+          description: The authorized API Key
+          schema:
+            type: string
+            example: "your_api_key"
+          required: true
+        - in: query
+          name: locationType
+          description: >
+            The locationType points to location or a self-define polygon which identifies a certain region that geo-spatials image of feature will be returned for.
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: location
+          description: >
+            A valid location have one format of below (1) state abbreviation, or (2) state name abbreviation + district code, or (3) county_fip.
+            A valid self-define polygon consists of valid series of longitude and latitude pairs. Coordinates MUST follow the right-hand or left-hand rule with respect to the area it bounds.
+            The location and self-define polygon are mutually exclusive.
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: state
+          description: >
+            This is the two digits state abbreviation where geo-spatial images are requested.
+          schema:
+            type: string
+            example: 'IL'
+          required: false
+        - in: query
+          name: district_code
+          description: >
+            This is the two digits district_code of a certain state where geo-spatial images are requested.
+            State abbreviation must be input if one wants to use district_code,
+          schema:
+            type: string
+            example: '10'
+          required: false
+        - in: query
+          name: fipsCode
+          description: >
+            A concatenation of state FIPS code and county FIPS code without separator to define the county that cash bids will be returned for.
+            A list of possible values can be found at (here)[https://www.nass.usda.gov/Data_and_Statistics/County_Data_Files/Frequently_Asked_Questions/county_list.txt].
+          schema:
+            type: integer
+            example: 17053
+          required: false
+        - in: query
+          name: polygon
+          description: >
+            A self-define polygon consists of valid series of longitude and latitude pairs. Coordinates MUST follow the right-hand or left-hand rule with respect to the area it bounds.
+          schema:
+            type: object
+            items:
+              $ref: '#/components/schemas/GetPolygon'
+          required: false
+        - in: query
+          name: feature
+          description: >
+            The geo-spatials image of feature will be returned for
+          schema:
+            type: string
+            example: 'NDVI'
+          required: true
+        - in: query
+          name: featureType
+          description: >
+            All the options include 'maximum','minimum','mean' and the api query will return the corresponding feature type of a certain region.
+            No data value will be excluded from summary.
+          schema:
+            type: string
+          required: false
+        - in: query
+          name: start date
+          description: >
+            Valid datetime which can determine the first day (inclusively) of requested geotiff image, formatted in YYYYMMDD
+          schema:
+            type: string
+            example: '20180401'
+          required: true
+        - in: query
+          name: end date
+          description: >
+            Valid datetime which can determine end day (exclusively) of requested geotiff image, formatted in YYYYMMDD
+          schema:
+            type: string
+            example: '20180410'
+          required: true
+
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCropFeaturesResponse'
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+      externalDocs:
+        description: Learn more about user operations provided by this API.
+        url: https://www.barchart.com/ondemand/api/getCropFeatures
+
+  /getCropClassification:
+    get:
+      tags:
+        - CropClassification
+      summary: Resturns crop classification geotiff image of requested region.
+      description: >
+                     The getCropClassification API provides crop classification geotiff image of requested region.
+                     Crop classification can be requested for state names, for district codes, for county_fips, and for self-define polygons.
+                     Crop features can be filtered by year.
+      parameters:
+        - in: query
+          name: apikey
+          description: The authorized API Key
+          schema:
+            type: string
+            example: "your_api_key"
+          required: true
+        - in: query
+          name: locationType
+          description: >
+            The locationType points to location or a self-define polygon which identifies a certain region that geo-spatials image of feature will be returned for.
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: location
+          description: >
+            A valid location have one format of below (1) state abbreviation, or (2) state name abbreviation + district code, or (3) county_fip.
+            A valid self-define polygon consists of valid series of longitude and latitude pairs. Coordinates MUST follow the right-hand or left-hand rule with respect to the area it bounds.
+            The location and self-define polygon are mutually exclusive.
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: state
+          description: >
+            This is the two digits state abbreviation where geo-spatial images are requested.
+          schema:
+            type: string
+            example: 'IL'
+          required: false
+        - in: query
+          name: district_code
+          description: >
+            This is the two digits district_code of a certain state where geo-spatial images are requested.
+            State abbreviation must be input if one wants to use district_code,
+          schema:
+            type: string
+            example: '10'
+          required: false
+        - in: query
+          name: fipsCode
+          description: >
+            A concatenation of state FIPS code and county FIPS code without separator to define the county that cash bids will be returned for.
+            A list of possible values can be found at (here)[https://www.nass.usda.gov/Data_and_Statistics/County_Data_Files/Frequently_Asked_Questions/county_list.txt].
+          schema:
+            type: integer
+            example: 17053
+          required: false
+        - in: query
+          name: polygon
+          description: >
+            A self-define polygon consists of valid series of longitude and latitude pairs. Coordinates MUST follow the right-hand or left-hand rule with respect to the area it bounds.
+          schema:
+            type: object
+            items:
+              $ref: '#/components/schemas/GetPolygon'
+          required: false
+        - in: query
+          name: year
+          description: >
+            The year when crop classification images are requested.
+          schema:
+            type: integer
+            example: 2018
+          required: true
+
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCropClassificationResponse'
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+      externalDocs:
+        description: Learn more about user operations provided by this API.
+        url: https://www.barchart.com/ondemand/api/getCropClassification
+
+
+components:
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: The JWT authorization
+
+  schemas:
+
+
+
+    GetCropFeaturesResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          description: Value of feature geotiff image returned as array.
+          items:
+            $ref: '#/components/schemas/CropFeaturesByLocation'      
+
+    GetCropClassificationResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          description: Value of crop classification geotiff image returned as array.
+          items:
+            $ref: '#/components/schemas/CropClassificationByLocation'  
+
+    GetPolygon:
+      type: object
+      properties:
+        coordinates:
+          type: array
+          description: the internal auto-increment numeric id for the cash bid.
+          items:
+            $ref: '#/components/schemas/Polygon'
+
+    Polygon:
+      type: object
+      properties:
+        coordinates:
+          type: array
+          description: array of points consist of x,y
+          example: [
+               [-121.1958,37.6683],
+               [-121.1779,37.6687],
+               [-121.1773,37.6792],
+               [-121.1958,37.6792],
+               [-121.1958,37.6683]
+            ]
+
+
+
+
+
+    CropFeaturesByLocation:
+      type: object
+      properties:
+        values:
+          type: array
+          description: The value of feature geotiff images of requested region. Each value is corresponding to each pixel of the geo-spatial image.
+          nullable: false
+          example: [[0,0,0,...,0],[0,0,0,...,0]]
+        state:
+          type: string
+          description: 2-char abbreviation of the state where the api request.
+          nullable: true
+          example: "IA"
+        district:
+          type: string
+          description: 2-char district code of a certain state.
+          nullable: true
+          example: "10"          
+        county:
+          type: string
+          description: The name of the county containing the applicable cash bid.
+          nullable: true
+          example: "Guthrie County"
+        polygon:
+          type: object
+          description: The series of longitude and latitude pairs defined by user.
+          items:
+            $ref: '#/components/schemas/GetPolygon'
+          nullable: true
+        start_date:
+          type: string
+          description: The start date of requested geo-spatial image.
+          nullable: false
+          example: '20180401'
+        end_date:
+          type: string
+          description: The end date of requested geo-spatial image.
+          nullable: false
+          example: '20201015'
+        mean:
+          type: number
+          description: The mean value of feature among the requested region of each time period.
+          nullable: true
+          example: 0.5
+        maximum:
+          type: number
+          description: The maximum value of feature among the requested region of each time period.
+          nullable: true
+          example: 1
+        minimum:
+          type: number
+          description: The minimum value of feature among the requested region of each time period.
+          nullable: true
+          example: -1
+
+    CropClassificationByLocation:
+      type: object
+      properties:
+        values:
+          type: array
+          description: The value of crop classification geotiff images of requested region. Each value is corresponding to each pixel of the geo-spatial image.
+          nullable: false
+          example: [[1,1,1,...,1],[5,5,5,...,5]]
+        state:
+          type: string
+          description: 2-char abbreviation of the state where the api request.
+          nullable: true
+          example: "IA"
+        district:
+          type: string
+          description: 2-char district code of a certain state.
+          nullable: true
+          example: "10"          
+        county:
+          type: string
+          description: The name of the county containing the applicable cash bid.
+          nullable: true
+          example: "Guthrie County"
+        polygon:
+          type: object
+          description: The series of longitude and latitude pairs defined by user.
+          items:
+            $ref: '#/components/schemas/GetPolygon'
+          nullable: true
+        year:
+          type: string
+          description: The year of requested crop classification geo-spatial image.
+          nullable: false
+          example: '20180401'
+
+
+
+
+  responses:
+    Success:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Success."
+              code:
+                type: integer
+                example: 200
+
+    Unauthorized:
+      description: The unauthorized access.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "API key is missing or not valid."
+
+    BadRequest:
+      description: The request was invalid, please see the message for more information.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "No active bids available for the requested location(s) at this time."
+              code:
+                type: integer
+                example: 204
+
+    ServerError:
+      description: Something is not working correctly, please contact support.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Something is not working correctly, please contact support."
+              code:
+                type: integer
+                example: 500
