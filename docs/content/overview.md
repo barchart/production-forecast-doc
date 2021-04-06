@@ -77,6 +77,8 @@ For north america, the tmax, tmin, prcp data is generated from GHCND stations. G
 | state | IL etc | State abbreviation |
 | crop_district | 10 etc | District code of state |
 | county_fips_code | 17001 etc | County_fips code |
+| start_date | 2019-06-01 etc | Start date of forecast output |
+| end_date | 2019-10-01 etc | End date of forecast output |
 | intrument_type | indexYield/indexRatio/indexHarvest/indexProduction | Forecast result type |
 
 
