@@ -36,7 +36,7 @@ Moderate NDVI values (approximately 0.2 to 0.5) correspond to sparse vegetation 
 Areas of barren rock, sand, or snow usually show very low NDVI values (for example, 0.1 or less).
 
 #### How NDVI is calculated?
-The NDVI is derived from spectral reflectance measurements in the near-infrared region and in the red(visible) region, as follows:\
+The NDVI is derived from spectral reflectance measurements in the near-infrared (NIR) region and in the red(visible) region, as follows:\
 NDVI = (NIR - Red) / (NIR + Red)\
 In general, if there is much more reflected radiation in near-infrared wavelengths than in visible wavelengths, then the vegetation in that pixel is likely to be dense.Subsequent work has shown that the NDVI is directly related to the photosynthetic capacity and hence energy absorption of plant canopies
 
