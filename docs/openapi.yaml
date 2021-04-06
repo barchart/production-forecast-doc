@@ -40,9 +40,7 @@ paths:
         - in: query
           name: location
           description: >
-            A valid location have one format of below (1) state abbreviation, or (2) state name abbreviation + district code, or (3) county_fip.
-            A valid self-define polygon consists of valid series of longitude and latitude pairs. Coordinates MUST follow the right-hand or left-hand rule with respect to the area it bounds.
-            The location and self-define polygon are mutually exclusive.
+            A valid location have one format of below (1) country abbreviation, or (2) country abbreviation + state abbreviation, or (3) country abbreviation + state abbreviation + district code, or (4) country abbreviation + county_fip.
           schema:
             type: string
           required: true
@@ -64,54 +62,38 @@ paths:
             example: '10'
           required: false
         - in: query
-          name: fipsCode
+          name: county_fip
           description: >
-            A concatenation of state FIPS code and county FIPS code without separator to define the county that cash bids will be returned for.
-            A list of possible values can be found at (here)[https://www.nass.usda.gov/Data_and_Statistics/County_Data_Files/Frequently_Asked_Questions/county_list.txt].
+            This is the county_fip of a certain county in a certain country. For the US and Brazil, county_fips are 5 digits while for Argentina, county_fips are 6 digits.
+            When consulting county_fip start with '0', one should not omit the beginning '0'.
           schema:
             type: integer
-            example: 17053
+            example: '17053'
           required: false
         - in: query
-          name: polygon
+          name: intrument_type
           description: >
-            A self-define polygon consists of valid series of longitude and latitude pairs. Coordinates MUST follow the right-hand or left-hand rule with respect to the area it bounds.
-          schema:
-            type: object
-            items:
-              $ref: '#/components/schemas/GetPolygon'
-          required: false
-        - in: query
-          name: feature
-          description: >
-            The geo-spatials image of feature will be returned for
+            The forecast result type that will be returned for.
           schema:
             type: string
-            example: 'NDVI'
+            example: 'indexYield'
           required: true
         - in: query
-          name: featureType
+          name: start_date
           description: >
-            All the options include 'maximum','minimum','mean' and the api query will return the corresponding feature type of a certain region.
-            No data value will be excluded from summary.
+            Valid datetime which can determine the first day (inclusively) of requested forecast results, formatted in YYYYMMDD.
           schema:
             type: string
-          required: false
-        - in: query
-          name: start date
-          description: >
-            Valid datetime which can determine the first day (inclusively) of requested geotiff image, formatted in YYYYMMDD
-          schema:
-            type: string
-            example: '20180401'
+            example: '20190601'
           required: true
         - in: query
-          name: end date
+          name: end_date
           description: >
-            Valid datetime which can determine end day (exclusively) of requested geotiff image, formatted in YYYYMMDD
+            Valid datetime which can determine end day (exclusively) of requested forecast results, formatted in YYYYMMDD.
+            End date should be later than the start date.
           schema:
             type: string
-            example: '20180410'
+            example: '20191001'
           required: true
 
       responses:
@@ -120,14 +102,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetCropFeaturesResponse'
+                $ref: '#/components/schemas/GetCropForecastResponse'
         '400':
           description: Bad Request
         '500':
           description: Internal Server Error
       externalDocs:
         description: Learn more about user operations provided by this API.
-        url: https://www.barchart.com/ondemand/api/getCropFeatures
+        url: https://www.barchart.com/ondemand/api/getCropForecast
 
 
   /getCropFeatures:
@@ -349,6 +331,14 @@ components:
 
   schemas:
 
+    GetCropForecastResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          description: Value of crop index forecast results returned as array.
+          items:
+            $ref: '#/components/schemas/CropForecastByLocation'      
 
 
     GetCropFeaturesResponse:
@@ -394,6 +384,56 @@ components:
 
 
 
+ 
+ 
+     CropForecastByLocation:
+      type: object
+      properties:
+        values:
+          type: array
+          description: The value of forecast result of requested region and date. 
+          nullable: false
+          example: [165.0, 165.1, ..., 164.0]
+        country:
+          type: string
+          description: 2-char abbreviation of the country where the api request.
+          nullable: false
+          example: "US"
+        state:
+          type: string
+          description: 2-char abbreviation of the state where the api request.
+          nullable: true
+          example: "IA"
+        district:
+          type: string
+          description: 2-char district code of a certain state.
+          nullable: true
+          example: "10"          
+        county:
+          type: string
+          description: This is the county_fip of a certain county in a certain country. For the US and Brazil, county_fips are 5 digits while for Argentina, county_fips are 6 digits.
+          nullable: true
+          example: "17001"
+        start_date:
+          type: string
+          description: The start date of requested forecast results.
+          nullable: false
+          example: '20180401'
+        end_date:
+          type: string
+          description: The end date of requested forecast results.
+          nullable: false
+          example: '20201015'
+        crop:
+          type: string
+          description: The crop of requested forecast results.
+          nullable: false
+          example: 0.5
+        intrument_type:
+          type: string
+          description: The forecast result type that will be returned for.
+          nullable: false
+          example: 1
 
 
     CropFeaturesByLocation:
