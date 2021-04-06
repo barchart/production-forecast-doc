@@ -7,24 +7,35 @@ For north america, we gather weather data from Moderate Resolution Imaging Spect
 ## Roadmap
 We provide county, district, state and national level forecast results for corn and soybean for the United States. We also provide district, province and natioal level forecast results for Canada.
 
+The update time periods of national level results are shown as below:
+
 |Country                 | Crop                            | Start Day    | End Day | 
 | :---------------------: | :----------: | :----------: | :-----------:
-| US | Sentinel-2 level-2A | The United States |Every 5 days| 2018-04-01  | 2020-10-15  | Raster, Geotiff | -1~1 |
-| US | Sentinel-2 level-2A | The United States |Every 5 days| 2018-04-01  | 2020-10-15  | Raster, Geotiff | -1~1 |
-| CA | corn | The United States |Every 5 days| 2018-04-01  | 2020-10-15  | Raster, Geotiff | -1~1 |
-| CA | soybean | The United States | Anuually | 2020  | 2020  | Raster, Geotiff | 0~255 |
-| CA | spring wheat | The United States | Anuually | 2020  | 2020  | Raster, Geotiff | 0~255 |
+| US | corn | 153 | 305 |
+| US | soybean | 153 | 353 | 
+| CA | corn | 129 | 209 |
+| CA | soybean | 121 | 249 |
+| CA | spring wheat | 185 | 249 |
+
+
+
 
 ## What Datasets Are Included?
 
-CPN Contributors datasets...
+Weather data used to make predictions:
 
-|Dataset                 | Source                            | Data Coverage    | Frequency | Historical Start  | Historical End | Format | range |
-| :---------------------: | :----------: | :----------: | :-----------: |:-----------: |:-----------: |:-----------:|:-----------:
-| NDVI | Sentinel-2 level-2A | The United States |Every 5 days| 2018-04-01  | 2020-10-15  | Raster, Geotiff | -1~1 |
-| EVI | Sentinel-2 level-2A | The United States |Every 5 days| 2018-04-01  | 2020-10-15  | Raster, Geotiff | -1~1 |
-| NDWI | Sentinel-2 level-2A | The United States |Every 5 days| 2018-04-01  | 2020-10-15  | Raster, Geotiff | -1~1 |
-| Crop Classification| Barchart | The United States | Anuually | 2020  | 2020  | Raster, Geotiff | 0~255 |
+|Dataset    | Parameter    | Source        | Data Coverage    | Frequency | Historical Start  | Historical End | Format |
+| :---------------------: | :----------: | :----------: | :-----------: |:-----------: |:-----------: |:-----------:
+| ndvi | ndvi | MODIS | Global     |Every 8 days| 2009-01-01  | until now  | double |
+| ndwi | ndwi | MODIS | Global     |Every 8 days| 2009-01-01  | until now | double | 
+| lst | lst_day | MODIS | Global   |Every 8 days| 2009-01-01  | until now | double |
+| lst | lst_night | MODIS | Global |Every 8 days| 2009-01-01  | until now | double |
+| ghcnd | tmax | GHCND | North America |Every 8 days | 2009-01-01  |  until now | double |
+| ghcnd | tmin | GHCND | North America |Every 8 days | 2009-01-01  | until now | double |
+| ghcnd | prcp | GHCND | North America |Every 8 days | 2009-01-01  | until now | double |
+| cpc | tmax | CPC | Global | Daily  | 2011-01-01  | until now | double |
+| cpc | tmin | CPC | Global | Daily  | 2011-01-01  | until now | double |
+| cpc | prcp | CPC | Global | Daily  | 2011-01-01  | until now | double |
 
 
 
