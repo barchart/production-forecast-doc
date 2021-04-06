@@ -24,7 +24,7 @@ The update time periods of the current national level results are shown as below
 | CA | soybean | 121 | 249 |
 | CA | spring wheat | 185 | 249 |
 
-
+The historical crop yield and production data is available in cmdtystats https://www.barchart.com/cmdty/data/fundamental/explore.
 
 
 ## What Datasets Are Included?
@@ -44,16 +44,28 @@ Weather data used to make predictions:
 | cpc | tmin | CPC | Global | Daily  | 2011-01-01  | until now | double |
 | cpc | prcp | CPC | Global | Daily  | 2011-01-01  | until now | double |
 
+Database used to save the forecast results:
 
-
+|Dataset    | Feature    |  Data Coverage    | Frequency | 
+| :---------------------: | :----------: | :----------: | :-----------: 
+| county_prediction                | weather impact              | county level | Daily during crop season |
+| county_ratio_prediction          | planted-harvested ratio     | county level | Daily during crop season |
+| district_prediction              | weather impact              | district level | Daily during crop season |
+| district_ratio_prediction        | planted-harvested ratio     | district level | Daily during crop season |
+| state_prediction                 | weather impact              | state level | Daily during crop season |
+| state_ratio_prediction           | planted-harvested ratio     | state level | Daily during crop season |
+| state_harvest_prediction         | harvested acreage           | state level | Daily during crop season |
+| state_production_prediction      | production                  | state level | Daily during crop season |
+| national_prediction              | weather impact              | national level | Daily during crop season |
+| national_ratio_prediction        | planted-harvested ratio     | national level | Daily during crop season |
+| national_harvest_prediction      | harvested acreage           | national level | Daily during crop season |
+| national_production_prediction   | production                  | national level | Daily during crop season |
 
 
 ## Data Source and processing
-These products are generated from Sentinel-2 level-2A 20m images. The original tile is 5490x5490 in size in a UTM zone based on the grid definition. To make it easy to use with cropland data layer (CDL) released by USDA, the original tiles are reprojected and corrected to have the same coordinate reference system (CRS) and resolution with CDL. This means the resolution of our final product is 30m.
+NDVI, NDWI, LST data is generated from MODIS satellite images. MODIS is a global product with 8-day period. The resolution of the original MODIS images is 250m https://modis-land.gsfc.nasa.gov/MODLAND_grid.html. For the US and Canada, we use the cropland data layer (CDL) with 30m resolution released by United States Department of Agriculture (USDA) and Government of Canda to find the pixels marked as the target crops. Then we calculate the mean values of weather data for each county or district.
 
-This product mainly focuses on the features of croplands. Consider cloud or snow would have great influences on these features, only pixels which are not distinguished as cloud/snow will be kept in the GeoTIFF. One can check https://earth.esa.int/web/sentinel/technical-guides/sentinel-2-msi/level-2a/algorithm for more information about cloud/snow classification of Sentinel-2 level-2A product.
-
-For the crop classification result, all the labels are the same as cropland data layer (CDL) released by USDA, except for the unclassified pixels, which will be marked as 255 due to long term cloud effects. At the same time, the NODATA value is 0.
+For north america, the tmax, tmin, prcp data is generated from GHCND stations. GHCND stations are located all over the world, but most of them are distributed in north america regions. For south america, these weather data is calculated from CPC data. CPC is also a global product, which is updated everyday. 
 
 ## API Structure
 (Need to discuss more with Mike)
