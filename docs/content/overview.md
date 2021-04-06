@@ -25,7 +25,7 @@ The update time periods of national level results are shown as below:
 Weather data used to make predictions:
 
 |Dataset    | Parameter    | Source        | Data Coverage    | Frequency | Historical Start  | Historical End | Format |
-| :---------------------: | :----------: | :----------: | :-----------: |:-----------: |:-----------: |:-----------:
+| :---------------------: | :----------: | :----------: | :-----------: |:-----------: |:-----------: |:-----------: |:-----------:
 | ndvi | ndvi | MODIS | Global     |Every 8 days| 2009-01-01  | until now  | double |
 | ndwi | ndwi | MODIS | Global     |Every 8 days| 2009-01-01  | until now | double | 
 | lst | lst_day | MODIS | Global   |Every 8 days| 2009-01-01  | until now | double |
