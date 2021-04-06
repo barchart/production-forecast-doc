@@ -17,6 +17,18 @@ For forecast result, we currently provide 10 datasets blow:
 | national_harvest_prediction      | harvested acreage           | national level | Daily during crop season |
 | national_production_prediction   | production                  | national level | Daily during crop season |
 
+#### When is national level forecast result released?
+
+The release time is shown as below. For example, the US corn forecast result will be available from the 153rd day of the year, and will be updated daily until the 305th day of the year, which is also our final forecast result. After that, our forecast result will not change.
+
+|Country                 | Crop                            | Start Day    | End Day | 
+| :---------------------: | :----------: | :----------: | :-----------:
+| US | corn | 153 | 305 |
+| US | soybean | 153 | 353 | 
+| CA | corn | 129 | 209 |
+| CA | soybean | 121 | 249 |
+| CA | spring wheat | 185 | 249 |
+
 #### What is Normalized Difference Vegetation Index(NDVI)?
 NDVI is the most popular indicator that can be used to assess how vegetation develops with time. NDVI ranges from -1 to 1.\
 High NDVI values (approximately 0.6 to 0.9) correspond to dense vegetation such as that found in temperate and tropical forests or crops at their peak growth stage.\
@@ -40,17 +52,15 @@ NDWI is sensitive to changes in liquid water content and in spongy mesophyll of 
 
 
 
-## Section 2: Polygons
+## Section 2: Weather Data
 
-#### What is the minimum / maximum area of a polygon?
+#### What sources do we use to generate weather data
+NDVI, NDWI, LST data is generated from MODIS satellite images. MODIS is a global product with 8-day period. The resolution of the original MODIS images is 250m https://modis-land.gsfc.nasa.gov/MODLAND_grid.html. For north america, the tmax, tmin, prcp data is generated from GHCND stations. GHCND stations are located all over the world, but the most of them are distributed in north america regions. For south america, these weather data is calculated from CPC data. CPC is also a global product, which is updated everyday. 
 
-#### What happens if I create a polygon that is greater than or less than the specified minimum / maximum area limit?
+#### How do we deal with MODIS satellite images?
 
-#### What is a format of data is used to specify the polygon?
+For the US and Canada, we use the cropland data layer (CDL) with 30m resolution released by United States Department of Agriculture (USDA) and Government of Canda to find the pixels marked as the target crops. Then we project the MODIS images to let it have the same coordinate reference system and resolution. After that, we pick up those target pixels to calculate the mean values of weather data for each county or district.
 
-#### How do you calculate the total area of the polygons?
+#### CDL is always released in the next year, how to deal with that?
 
-
-## Section 3: API
-
-#### How do we process satellite imagery
+We do not generate the CDL of current year in this project. We use the CDL image of the previous year to generate our weather data. For example, in year 2020, we use the 2019 official CDL to find the target pixels and calculate weather data.
