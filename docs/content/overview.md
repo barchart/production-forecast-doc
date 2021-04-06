@@ -65,26 +65,20 @@ Database used to save the forecast results:
 ## Data Source and processing
 NDVI, NDWI, LST data is generated from MODIS satellite images. MODIS is a global product with 8-day period. The resolution of the original MODIS images is 250m https://modis-land.gsfc.nasa.gov/MODLAND_grid.html. For the US and Canada, we use the cropland data layer (CDL) with 30m resolution released by United States Department of Agriculture (USDA) and Government of Canda to find the pixels marked as the target crops. Then we calculate the mean values of weather data for each county or district.
 
-For north america, the tmax, tmin, prcp data is generated from GHCND stations. GHCND stations are located all over the world, but most of them are distributed in north america regions. For south america, these weather data is calculated from CPC data. CPC is also a global product, which is updated everyday. 
+For north america, the tmax, tmin, prcp data is generated from GHCND stations. GHCND stations are located all over the world, but the most of them are distributed in north america regions. For south america, these weather data is calculated from CPC data. CPC is also a global product, which is updated everyday. 
 
 ## API Structure
-(Need to discuss more with Mike)
+
 |Attribute                 | Value                            | Description    | 
 | :---------------------: | :----------: | :----------: 
-| Start Date | 20180401 etc | Start date of downloading period |
-| End Date | 20181028 etc | End date of downloading period |
-| State | IL etc | State abbreviation |
-| District | 10 etc | District code of state |
-| County_fips | 0 | County_fips code |
-| Polygon | (Python format polygon) | Polygon region of interest |
+| index_group | County/District/State/National | Area level |
+| crop | corn etc | Crop name |
+| country | US etc | Country abbreviation |
+| state | IL etc | State abbreviation |
+| crop_district | 10 etc | District code of state |
+| county_fips_code | 17001 etc | County_fips code |
+| intrument_type | indexYield/indexRatio/indexHarvest/indexProduction | Forecast result type |
 
-
-## User cases
-Images are stored as the raster format of GeoTIFF with US district shape. Users can define polygon regions and the start-end period based on their own interests to effeciently read or download these GeoTIFF as series directly from Barchart database. Users can also input district or county fips code to directly get the information or download the corresponding images.
-* One can monitor crop growth within a large or small region based on these past and current year data.
-* One can investigate how to use EVI, NDVI, NDWI to make crop classification without downloading the whole tiles like before.
-* One can study the changing tendency of vegetation features during crop season.
-* One can take advantage of crop classification result to estimate the total production of crops within a certain region, to make better trading decisions such as futures based on these crop-classification.
 
 
 ## Support
