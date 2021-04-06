@@ -1,8 +1,19 @@
 ## Short Description
 
-CPN ...
+Production forecast overview consists of two parts, yield and harvested acreage forecast. Our forecast result is updated daily during crop season.
+
+For north america, we gather weather data from Moderate Resolution Imaging Spectroradiometer (MODIS) satellite products and Global Historical Climatology Network Daily (GHCND) stations, while for south american, we use MODIS and Climate Prediction Center (CPC). We choose 7 parameters to make forecast, which are Normalized Difference Vegetation Index (NDVI), Normalized Difference Water Index (NDWI), Land Surface Temperature (LST) in day and night, maximum and minimum temperature, and precipitation. 
+
 ## Roadmap
-CPM...
+We provide county, district, state and national level forecast results for corn and soybean for the United States. We also provide district, province and natioal level forecast results for Canada.
+
+|Country                 | Crop                            | Start Day    | End Day | 
+| :---------------------: | :----------: | :----------: | :-----------:
+| US | Sentinel-2 level-2A | The United States |Every 5 days| 2018-04-01  | 2020-10-15  | Raster, Geotiff | -1~1 |
+| US | Sentinel-2 level-2A | The United States |Every 5 days| 2018-04-01  | 2020-10-15  | Raster, Geotiff | -1~1 |
+| CA | corn | The United States |Every 5 days| 2018-04-01  | 2020-10-15  | Raster, Geotiff | -1~1 |
+| CA | soybean | The United States | Anuually | 2020  | 2020  | Raster, Geotiff | 0~255 |
+| CA | spring wheat | The United States | Anuually | 2020  | 2020  | Raster, Geotiff | 0~255 |
 
 ## What Datasets Are Included?
 
