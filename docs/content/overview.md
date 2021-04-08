@@ -11,7 +11,7 @@ For now, we provide
 
 In the fure, we will also provide
 1. county, district, state and national level forecast results for winter wheat in the United States in the first half of 2021;
-2. department, province and national level forecast results for corn, soybean and wheat in Argentina in the first half of 2021;
+2. department, province and national level forecast results for corn, soybean and wheat in Brazil in the first half of 2021;
 3. microregion, state and national level forecast results for corn, soybean and wheat in Argentina in the first half of 2021.
 
 The update time periods of the current national level results are shown as below:
@@ -33,16 +33,16 @@ Weather data used to make predictions:
 
 |Dataset    | Parameter    | Source        | Data Coverage    | Frequency | Historical Start  | Historical End | Format |
 | :---------------------: | :----------: | :----------: | :-----------: |:-----------: |:-----------: |:-----------: |:-----------:
-| ndvi | ndvi | MODIS | Global     |Every 8 days| 2009-01-01  | until now  | double |
-| ndwi | ndwi | MODIS | Global     |Every 8 days| 2009-01-01  | until now | double | 
-| lst | lst_day | MODIS | Global   |Every 8 days| 2009-01-01  | until now | double |
-| lst | lst_night | MODIS | Global |Every 8 days| 2009-01-01  | until now | double |
-| ghcnd | tmax | GHCND | North America |Every 8 days | 2009-01-01  |  until now | double |
-| ghcnd | tmin | GHCND | North America |Every 8 days | 2009-01-01  | until now | double |
-| ghcnd | prcp | GHCND | North America |Every 8 days | 2009-01-01  | until now | double |
-| cpc | tmax | CPC | Global | Daily  | 2011-01-01  | until now | double |
-| cpc | tmin | CPC | Global | Daily  | 2011-01-01  | until now | double |
-| cpc | prcp | CPC | Global | Daily  | 2011-01-01  | until now | double |
+| ndvi | ndvi | MODIS | Global     |Every 8 days| 2009-01-01  | at present  | double |
+| ndwi | ndwi | MODIS | Global     |Every 8 days| 2009-01-01  | at present | double |
+| lst | lst_day | MODIS | Global   |Every 8 days| 2009-01-01  | at present | double |
+| lst | lst_night | MODIS | Global |Every 8 days| 2009-01-01  | at present | double |
+| ghcnd | tmax | GHCND | North America |Every 8 days | 2009-01-01  |  at present | double |
+| ghcnd | tmin | GHCND | North America |Every 8 days | 2009-01-01  | at present | double |
+| ghcnd | prcp | GHCND | North America |Every 8 days | 2009-01-01  | at present | double |
+| cpc | tmax | CPC | Global | Daily  | 2011-01-01  | at present | double |
+| cpc | tmin | CPC | Global | Daily  | 2011-01-01  | at present | double |
+| cpc | prcp | CPC | Global | Daily  | 2011-01-01  | at present | double |
 
 Database used to save the forecast results:
 

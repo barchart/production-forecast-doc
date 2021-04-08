@@ -1,6 +1,6 @@
-# cmdty Pricing Network <small>1.0.0</small>
+# Crop Production and Yield Forecast <small>1.0.0</small>
 
-> cmdty Pricing Network
+> Access our daily international crop production, acreage, and yield forecasts to get ahead of the curve.
 
 [Product Overview](/content/overview)
 [Quick Start](/content/quick_start)
