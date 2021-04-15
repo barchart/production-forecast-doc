@@ -21,14 +21,17 @@ For North America, our weather data is aggregated from from Moderate Resolution 
 |N. Amer Production Forecasts| Barchart | CA | N,P,D | soybean | 121 | 249 | EOD | |
 |N. Amer Production Forecasts| Barchart | CA | N,P,D | spring wheat | 185 | 249 | EOD | |
 
-Location Dictionary - N = Nation, P = Province, S = State, P, D = District, C = County
+Coverage Dictionary - N = Nation, P = Province, S = State, D = District, C = County
 
 ## Product Roadmap
 
-In the fure, we will also provide
-1. county, district, state and national level forecast results for winter wheat in the United States in the first half of 2021;
-2. department, province and national level forecast results for corn, soybean and wheat in Brazil in the first half of 2021;
-3. microregion, state and national level forecast results for corn, soybean and wheat in Argentina in the first half of 2021.
+Here are some new geographies, crops, and features that we're working on. If you would like to submit a feature request, please reach out to cmdty@barchart.com.
+
+**U.S. Wheat** - We plan on delivering county, district, state and national level forecasts for U.S. Winter Wheat 1H 2021
+
+**Brazilian Field Crops** - Department, province and national level forecast for Brazilian corn, soybean and wheat are expected in 1H 2021
+
+**Argentinian Field Crops** - Microregion, state and national level forecast results for Argentine corn, soybean and wheat are expected in 1H 2021
 
 
 ## What Datasets Are Included?
@@ -88,13 +91,14 @@ For north america, the tmax, tmin, prcp data is generated from GHCND stations. G
 
 
 ## Support
-For questions regarding the dataset, you may contact – cashdata@barchart.com
+For level one support, please email mds@barchart.com and a ticket will be automatically generated to track your request.
+
+Feature requests can be submitted to cmdty@barchart.com. 
 
 
-## Terms
+## Getting Started
 
-* [Trials are available](https://www.barchart.com/cmdty/contact)
-* Data is for internal use only, and redistribution is expressly forbidden
-* Contact Barchart directly at cashdata@barchart.com for more information.
-
+* Interested in a trial? [Let us know](https://www.barchart.com/cmdty/contact) and we’ll get you started. 
+* Just a heads up, data is for internal use only. Redistribution is expressly prohibited. 
+* For more information, contact us directly at cmdty@barchart.com. We’d be happy to answer any questions you may have. 
 
