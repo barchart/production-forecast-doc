@@ -1,6 +1,6 @@
 ## Short Description
 
-Production forecast overview consists of two parts, yield and harvested acreage forecast. Our forecast result is updated daily during crop season.
+Production forecast overview consists of production forecast, yield forecast, and harvested acreage forecast. Our forecast result is updated daily during crop season.
 
 For north america, we gather weather data from Moderate Resolution Imaging Spectroradiometer (MODIS) satellite products and Global Historical Climatology Network Daily (GHCND) stations, while for south american, we use MODIS and Climate Prediction Center (CPC). We choose 7 parameters to make forecast, which are Normalized Difference Vegetation Index (NDVI), Normalized Difference Water Index (NDWI), Land Surface Temperature (LST) in day and night, maximum and minimum temperature, and precipitation. 
 

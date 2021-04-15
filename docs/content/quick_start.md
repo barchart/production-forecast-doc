@@ -9,7 +9,7 @@ Let's retrieve NDVI data for your county:
 * Open any browser you have
 * Put your API key and Zip Code into the url template -  http://ondemand.websol.barchart.com/getCropFeatures.json?apikey={YOUR_API_KEY}&featureType=NDVI&locationType=county&state={Your_State}&fipsCode={Your_County_Fipscode}&start_date=20201001&end_date=20201031 -, then copy it
 * Past the url into the browser, and hit enter
-* Voila! Should qualified grain bids return to your browser, similar to below:
+* Voila! Should qualified data return to your browser, similar to below:
 ```
 "status": {
     "code": 200,
