@@ -1,9 +1,16 @@
-## 01 Get an API key
+# Quick Start Guide
 
-GO to [cmdty website](https://www.barchart.com/cmdty/contact) and fill out the `Get Started` form.
-Barchart team will set-up an API Key for you.
+## Get an API key
 
-## 02 Make your first query
+If you'd like to use our service, please [visit our website](https://www.barchart.com/cmdty/contact) and fill out the form.  You can also send us an email at cmdty@barchart.com.  It's worth nothing that the more information you can provide us in the request will allow us to deliver a solution which best fits your needs.  Some information that would be helpful would include:
+* Use Case - What are you looking to do with the information?
+* Data Access - Is your application public or only available to subscribers?  Can users download the data?
+* Historical Data - Do you require historical information or only current prices?
+* Access Type - Do you want to see data for a zip code or for a collection of bids that you specify?
+
+Once we have an understanding of what you're looking to do our team will be able to get you started.
+
+## Make your first query
 
 Let's retrieve NDVI data for your county:
 * Open any browser you have
@@ -77,6 +84,6 @@ Let's retrieve NDVI data for your county:
 }
 ```
 
-## 03 Explore more
+## Explore more
 
-Congrats! You've made your first query. Now, you can check detailed API documentation at API Reference Section, and explore more advanced methods to query grain prices data in API Examples Section
+Congrats! You've made your first query. Now, you can check detailed API documentation at API Reference Section, and explore more advanced methods to query grain production forecats in API Examples Section
