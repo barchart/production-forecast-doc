@@ -1,4 +1,6 @@
-## Section 1: Dataset General Information
+# FAQs
+
+## General Information
 #### What dataset do we offer?
 For forecast result, we currently provide 10 datasets blow:
 
@@ -52,7 +54,7 @@ NDWI is sensitive to changes in liquid water content and in spongy mesophyll of 
 
 
 
-## Section 2: Weather Data
+## Weather Data
 
 #### What sources do we use to generate weather data
 NDVI, NDWI, LST data is generated from MODIS satellite images. MODIS is a global product with 8-day period. The resolution of the original MODIS images is 250m https://modis-land.gsfc.nasa.gov/MODLAND_grid.html. For north america, the tmax, tmin, prcp data is generated from GHCND stations. GHCND stations are located all over the world, but the most of them are distributed in north america regions. For south america, these weather data is calculated from CPC data. CPC is also a global product, which is updated everyday. 
