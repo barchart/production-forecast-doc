@@ -1,30 +1,34 @@
-## Short Description
+# Overview
 
-Production forecast overview consists of production forecast, yield forecast, and harvested acreage forecast. Our forecast result is updated daily during crop season.
+## Description
 
-For north america, we gather weather data from Moderate Resolution Imaging Spectroradiometer (MODIS) satellite products and Global Historical Climatology Network Daily (GHCND) stations, while for south american, we use MODIS and Climate Prediction Center (CPC). We choose 7 parameters to make forecast, which are Normalized Difference Vegetation Index (NDVI), Normalized Difference Water Index (NDWI), Land Surface Temperature (LST) in day and night, maximum and minimum temperature, and precipitation. 
+Barchart is the leading provider of global crop production and yield forecasts generated through geospatial data and machine learning models.  Daily forecasts for covered crops are released daily throughout the relevant growing season.
 
-## Roadmap
-For now, we provide 
-1. county, district, state and national level forecast results for corn and soybean in the United States;
-2. district, province and natioal level forecast results for Canada.
+For North America, our weather data is aggregated from from Moderate Resolution Imaging Spectroradiometer (MODIS) satellite products and Global Historical Climatology Network Daily (GHCND) stations.  For South American forecasts, our models use MODIS and Climate Prediction Center (CPC). There are seven parameters that we use to make our foecasts which are:
+* Normalized Difference Vegetation Index (NDVI)
+* Normalized Difference Water Index (NDWI)
+* Land Surface Temperature (LST) Day / Night
+* Maximum and Minimum Temperature
+* Precipitation
+
+## What's Included?
+
+|Dataset | Source |Country     | Coverage     | Crop                            | Start Day    | End Day | Frequency | History Start | 
+| :---------------------:| :----------: | :----------: |:---------------------: | :----------: | :----------:  | :----------:  | :----------: | :-----------:
+|N. Amer Production Forecasts| Barchart | US | N,S,D,C | corn | 153 | 305 | EOD | |
+|N. Amer Production Forecasts| Barchart | US | N,S,D,C | soybean | 153 | 353 | EOD | |
+|N. Amer Production Forecasts| Barchart | CA | N,P,D | corn | 129 | 209 | EOD | |
+|N. Amer Production Forecasts| Barchart | CA | N,P,D | soybean | 121 | 249 | EOD | |
+|N. Amer Production Forecasts| Barchart | CA | N,P,D | spring wheat | 185 | 249 | EOD | |
+
+Location Dictionary - N = Nation, P = Province, S = State, P, D = District, C = County
+
+## Product Roadmap
 
 In the fure, we will also provide
 1. county, district, state and national level forecast results for winter wheat in the United States in the first half of 2021;
 2. department, province and national level forecast results for corn, soybean and wheat in Brazil in the first half of 2021;
 3. microregion, state and national level forecast results for corn, soybean and wheat in Argentina in the first half of 2021.
-
-The update time periods of the current national level results are shown as below:
-
-|Country                 | Crop                            | Start Day    | End Day | 
-| :---------------------: | :----------: | :----------: | :-----------:
-| US | corn | 153 | 305 |
-| US | soybean | 153 | 353 | 
-| CA | corn | 129 | 209 |
-| CA | soybean | 121 | 249 |
-| CA | spring wheat | 185 | 249 |
-
-The historical crop yield and production data is available in cmdtystats https://www.barchart.com/cmdty/data/fundamental/explore.
 
 
 ## What Datasets Are Included?
