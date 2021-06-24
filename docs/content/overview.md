@@ -20,6 +20,10 @@ For North America, our weather data is aggregated from from Moderate Resolution 
 |N. Amer Production Forecasts| Barchart | CA | N,P,D | corn | 129 | 209 | EOD | |
 |N. Amer Production Forecasts| Barchart | CA | N,P,D | soybean | 121 | 249 | EOD | |
 |N. Amer Production Forecasts| Barchart | CA | N,P,D | spring wheat | 185 | 249 | EOD | |
+|N. Amer Production Forecasts| Barchart | BR | N,P,D | corn | 345 | 105 | EOD | |
+|N. Amer Production Forecasts| Barchart | BR | N,P,D | soybean | 345 | 105 | EOD | |
+|N. Amer Production Forecasts| Barchart | AR | N,P,D | corn | 345 | 113 | EOD | |
+|N. Amer Production Forecasts| Barchart | AR | N,P,D | soybean | 345 | 113 | EOD | |
 
 Coverage Dictionary - N = Nation, P = Province, S = State, D = District, C = County
 
