@@ -15,15 +15,27 @@ For North America, our weather data is aggregated from from Moderate Resolution 
 
 |Dataset | Source |Country     | Coverage     | Crop                            | Start Day    | End Day | Frequency | History Start | 
 | :---------------------:| :----------: | :----------: |:---------------------: | :----------: | :----------:  | :----------:  | :----------: | :-----------:
-|N. Amer Production Forecasts| Barchart | US | N,S,D,C | corn | 153 | 305 | EOD | |
-|N. Amer Production Forecasts| Barchart | US | N,S,D,C | soybean | 153 | 353 | EOD | |
-|N. Amer Production Forecasts| Barchart | CA | N,P,D | corn | 129 | 209 | EOD | |
-|N. Amer Production Forecasts| Barchart | CA | N,P,D | soybean | 121 | 249 | EOD | |
-|N. Amer Production Forecasts| Barchart | CA | N,P,D | spring wheat | 185 | 249 | EOD | |
-|N. Amer Production Forecasts| Barchart | BR | N,P,D | corn | 345 | 105 | EOD | |
-|N. Amer Production Forecasts| Barchart | BR | N,P,D | soybean | 345 | 105 | EOD | |
-|N. Amer Production Forecasts| Barchart | AR | N,P,D | corn | 345 | 113 | EOD | |
-|N. Amer Production Forecasts| Barchart | AR | N,P,D | soybean | 345 | 113 | EOD | |
+|N. Amer Yield Forecasts| Barchart | US | N,S,D,C | corn | 153 | 305 | EOD | 2014-06-02 |
+|N. Amer Yield Forecasts| Barchart | US | N,S,D,C | soybean | 153 | 353 | EOD | 2014-06-02 |
+|N. Amer Yield Forecasts| Barchart | CA | N,P,D | corn | 129 | 209 | EOD | 2018-06-01 |
+|N. Amer Yield Forecasts| Barchart | CA | N,P,D | soybean | 121 | 249 | EOD | 2018-06-01 |
+|N. Amer Yield Forecasts| Barchart | CA | N,P,D | spring wheat | 185 | 249 | EOD | 2018-06-01 |
+|N. Amer Yield Forecasts| Barchart | BR | N,P,D | corn | 345 | 105 | EOD | 2018-12-11 |
+|N. Amer Yield Forecasts| Barchart | BR | N,P,D | soybean | 345 | 105 | EOD | 2018-12-11 |
+|N. Amer Yield Forecasts| Barchart | AR | N,P,D | corn | 345 | 113 | EOD | 2019-12-11 |
+|N. Amer Yield Forecasts| Barchart | AR | N,P,D | soybean | 345 | 113 | EOD | 2019-12-11 |
+
+|Dataset | Source |Country     | Coverage     | Crop                            | Start Day    | End Day | Frequency | History Start | 
+| :---------------------:| :----------: | :----------: |:---------------------: | :----------: | :----------:  | :----------:  | :----------: | :-----------:
+|N. Amer Production Forecasts| Barchart | US | N,S | corn | 153 | 305 | EOD | 2020-08-20 |
+|N. Amer Production Forecasts| Barchart | US | N,S | soybean | 153 | 353 | EOD | 2020-08-20 |
+|N. Amer Production Forecasts| Barchart | CA | N,P | corn | 185 | 241 | EOD | 2018-06-01 |
+|N. Amer Production Forecasts| Barchart | CA | N,P | soybean | 177 | 289 | EOD | 2018-06-01 |
+|N. Amer Production Forecasts| Barchart | CA | N,P | spring wheat | 185 | 273 | EOD | 2018-06-01 |
+|N. Amer Production Forecasts| Barchart | BR | N,S | corn | | 105 | EOD | 2018-12-11 |
+|N. Amer Production Forecasts| Barchart | BR | N,S | soybean | | 105 | EOD | 2018-12-11 |
+|N. Amer Production Forecasts| Barchart | AR | N | corn | 63 | 113 | EOD | 2019-12-11 |
+|N. Amer Production Forecasts| Barchart | AR | N | soybean | 63 | 113 | EOD | 2019-12-11 |
 
 Coverage Dictionary - N = Nation, P = Province, S = State, D = District, C = County
 
