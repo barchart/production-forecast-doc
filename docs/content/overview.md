@@ -20,10 +20,10 @@ For North America, our weather data is aggregated from from Moderate Resolution 
 |N. Amer Yield Forecasts| Barchart | CA | N,P,D | corn | 129 | 209 | EOD | 2018-06-01 |
 |N. Amer Yield Forecasts| Barchart | CA | N,P,D | soybean | 121 | 249 | EOD | 2018-06-01 |
 |N. Amer Yield Forecasts| Barchart | CA | N,P,D | spring wheat | 185 | 249 | EOD | 2018-06-01 |
-|S. Amer Yield Forecasts| Barchart | BR | N,P,D | corn | 345 | 105 | EOD | 2018-12-11 |
-|S. Amer Yield Forecasts| Barchart | BR | N,P,D | soybean | 345 | 105 | EOD | 2018-12-11 |
-|S. Amer Yield Forecasts| Barchart | AR | N,P,D | corn | 345 | 113 | EOD | 2019-12-11 |
-|S. Amer Yield Forecasts| Barchart | AR | N,P,D | soybean | 345 | 113 | EOD | 2019-12-11 |
+|S. Amer Yield Forecasts| Barchart | BR | N,S,C | corn | 345 | 105 | EOD | 2018-12-11 |
+|S. Amer Yield Forecasts| Barchart | BR | N,S,C | soybean | 345 | 105 | EOD | 2018-12-11 |
+|S. Amer Yield Forecasts| Barchart | AR | N,S,C | corn | 345 | 113 | EOD | 2019-12-11 |
+|S. Amer Yield Forecasts| Barchart | AR | N,S,C | soybean | 345 | 113 | EOD | 2019-12-11 |
 
 |Dataset | Source |Country     | Coverage     | Crop                            | Start Day    | End Day | Frequency | History Start | 
 | :---------------------:| :----------: | :----------: |:---------------------: | :----------: | :----------:  | :----------:  | :----------: | :-----------:
